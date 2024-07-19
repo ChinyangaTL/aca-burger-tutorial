@@ -1,13 +1,14 @@
 import BaseBread from "./components/Basebread";
+import Filling from "./components/Filling";
 import TopBread from "./components/TopBread";
 
 const App = () => {
   return (
     <div>
       <TopBread />
-      <div>tomato</div>
-      <div>meat</div>
-      <div>lettuce</div>
+      <Filling color="red" type="tomato" />
+      <Filling color="green" type="lettuce" />
+      <Filling color="brown" type="meat" />
       <BaseBread />
     </div>
   );
