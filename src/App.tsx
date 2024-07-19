@@ -13,6 +13,10 @@ const initialFilling = [
 const App = () => {
   const [filling, setFilling] = useState(initialFilling);
 
+  const removeLayer = (id: string) => {
+    setFilling(filling.filter((layer) => layer.id !== id));
+  };
+
   useEffect(() => {
     console.log(filling);
   });
@@ -23,7 +27,13 @@ const App = () => {
       {filling.map((layer) => {
         return (
           <>
-            <Filling type={layer.type} color={layer.color} />
+            <Filling
+              key={layer.id}
+              type={layer.type}
+              color={layer.color}
+              removeLayer={removeLayer}
+              id={layer.id}
+            />
           </>
         );
       })}

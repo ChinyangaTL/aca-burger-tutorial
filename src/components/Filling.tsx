@@ -3,21 +3,14 @@ import { useState } from "react";
 interface Props {
   type: string;
   color: string;
+  removeLayer: (id: string) => void;
+  id: string;
 }
 
-const Filling: React.FC<Props> = ({ color, type }) => {
-  const [isVisible, setIsVisible] = useState(true);
-
-  const makeInvisible = () => {
-    setIsVisible(false);
-  };
-
+const Filling: React.FC<Props> = ({ color, type, removeLayer, id }) => {
   return (
-    <div
-      onClick={makeInvisible}
-      style={{ color: color, display: `${isVisible ? "block" : "none"}` }}
-    >
-      {type}
+    <div onClick={() => removeLayer(id)} style={{ color: color }}>
+      {id}
     </div>
   );
 };
