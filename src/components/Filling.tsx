@@ -1,7 +1,6 @@
 interface Props {
   type: string;
   color: string;
-  name?: string;
 }
 
 const Filling: React.FC<Props> = ({ color, type }) => {
