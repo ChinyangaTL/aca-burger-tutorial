@@ -9,6 +9,7 @@ const App = () => {
       <Filling color="red" type="tomato" />
       <Filling color="green" type="lettuce" />
       <Filling color="brown" type="meat" />
+
       <BaseBread />
     </div>
   );
